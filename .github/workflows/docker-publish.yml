@@ -28,7 +28,7 @@ jobs:
       - name: Output Run ID
         run: echo ${{ github.run_id }}
       - name: Output Run Number
-        run: echo ${{ github.run_number }
+        run: echo ${{ github.run_number }}
       # Build and push Docker image with Buildx (don't push on PR)
       # https://github.com/docker/build-push-action
       # Build and push to docker.io repo
