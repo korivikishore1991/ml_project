@@ -1,0 +1,36 @@
+docker --version #to check the docker
+
+#building an Image
+docker image build -t ml_project .
+#Check the exiting images in the Docker
+docker image ls
+
+#Run a Container
+docker run -d --rm -p 5000:5000 --name ml_project ml_project
+-d => detached mode :: -it => for interactive mode
+--rm => remove the container when it stops
+-p => port to bind from docker image to local
+--name => name of the container
+{OR}
+docker run -p 5000:5000 ml_project #to launch the container, change the paths accordingly
+
+#to check the contents inside the container
+docker run -it money_api sh 
+
+#Check the status of the Docker container using
+docker container ls
+{OR}
+docker ps #checking the running containers
+
+#Tag the image
+docker image tag ml_project rkorivi/ml_project:v01
+
+#Push the image to public library
+docker image push rkorivi/ml_project:v01
+
+#Pulling the docker image
+sudo docker pull rkorivi/ml_project:v01
+
+#Runing it on AWS
+sudo docker run --rm -p 5000:5000 --name ml_project rkorivi/ml_project:v01
+
