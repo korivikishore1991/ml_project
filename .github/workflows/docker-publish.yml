@@ -12,9 +12,6 @@ on:
 env:
   # Use docker.io for Docker Hub if empty
   REGISTRY: docker.io
-  # github.repository as <account>/<repo>
-  image: rkorivi/ml_project
-
 
 jobs:
   build-containers:
@@ -35,6 +32,8 @@ jobs:
       - name: Build and push Docker image
         uses: mr-smithers-excellent/docker-build-push@v5
         with:
+          # github.repository as <account>/<repo>
+          image: rkorivi/ml_project
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
           dockerfile: Dockerfile
