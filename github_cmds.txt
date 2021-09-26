@@ -1,0 +1,10 @@
+git clone https://github.com/korivikishore1991/ml_project
+cd ml_project
+git status
+git checkout -b dev
+git commit -m "commiting to dev branch"
+git push origin dev
+git branch
+git checkout main
+git merge dev
+git push -u origin main
